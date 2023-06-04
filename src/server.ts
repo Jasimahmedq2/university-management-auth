@@ -1,20 +1,20 @@
-import mongoose from "mongoose";
-import config from "./config/index";
-import app from "./app";
+import mongoose from 'mongoose'
+import config from './config/index'
+import app from './app'
+import { errorLogger, logger } from './shared/logger'
 
-const port: number = 5000 || config.port;
+const port: number = 5000 || config.port
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(config.db_connect as string);
-    console.log("db connected");
+    await mongoose.connect(config.db_connect as string)
+    logger.info('db connected')
     app.listen(port, () => {
-      console.log("successfully connected");
-    });
+      console.log('successfully connected')
+    })
   } catch (error) {
-    console.log("db disconnected:", error);
+    errorLogger.error('db disconnected:', error)
   }
-};
+}
 
 connectDB()
-
