@@ -9,6 +9,41 @@
             "date": 1685854382115,
             "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-10-04-06-error.log",
             "hash": "460915536bdd13ec8ac3a7edf902853436eaf5363732284182ca3583720003ac"
+        },
+        {
+            "date": 1685858597989,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-12-04-06-error.log",
+            "hash": "292a7ec3160a1a5ea89eead02aa25ffde29440cb0f70aaf87398a1e11513d1d7"
+        },
+        {
+            "date": 1686153094039,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-21-07-06-error.log",
+            "hash": "af9593117e734d3bbf0b6a463e21367684b8d28af68b6b26c4217b383a1c46ce"
+        },
+        {
+            "date": 1686228729931,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-18-08-06-error.log",
+            "hash": "d82875f9ce6031174a31601ccf433f9f04c4e4d7693bf0a80b62698a3283e4f6"
+        },
+        {
+            "date": 1686229226684,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-19-08-06-error.log",
+            "hash": "893859cb6fd7277c217ca59fe42582f5d3efc335f571cfaae91e477bb748b681"
+        },
+        {
+            "date": 1686237115489,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-21-08-06-error.log",
+            "hash": "763b271ab0b864a8906fbac0ecb3551e517a0333db584f34afe862007bc7712c"
+        },
+        {
+            "date": 1686253908311,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-01-09-06-error.log",
+            "hash": "e4321491a88a3a29461a086754ef90499673acdee4c33ccfdf8bfc894552084c"
+        },
+        {
+            "date": 1686254952499,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-02-09-06-error.log",
+            "hash": "4ff65de63344b27c28e23cf098ef263e1559c668c7106cda68e1e6223563c967"
         }
     ],
     "hashType": "sha256"
