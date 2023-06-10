@@ -1,21 +1,36 @@
-import cors from 'cors'
-import express, { Application, Request, Response } from 'express'
-import route from '../src/app/routes/index'
-import globalMiddleware from './app/middleware/globalMiddleware'
+import cors from 'cors';
+import express, { Application, NextFunction, Request, Response } from 'express';
+import route from '../src/app/routes/index';
+import globalMiddleware from './app/middleware/globalMiddleware';
 
-const app: Application = express()
+const app: Application = express();
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.use(cors())
-
-app.use('api/v1/', route)
+app.use(cors());
 
 app.get('/', (req: Request, res: Response) => {
-  res.json('db running perfectly')
-})
+  res.json('db running perfectly');
+});
 
-app.use(globalMiddleware)
+app.use('/api/v1', route);
 
-export default app
+app.use(globalMiddleware);
+
+// not found route
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.status(404).json({
+    statusCode: 404,
+    message: 'Route Not Found',
+    errorMessages: [
+      {
+        path: req.originalUrl,
+        message: 'the route not exist',
+      },
+    ],
+  });
+  next();
+});
+
+export default app;
