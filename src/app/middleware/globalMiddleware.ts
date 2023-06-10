@@ -1,12 +1,13 @@
-import { ErrorRequestHandler, NextFunction, Request, Response } from 'express'
-import { ZodError } from 'zod'
+import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
+import { ZodError } from 'zod';
 
-import config from '../../config'
-import ApiError from '../../errors/apiError'
-import handleValidationError from '../../errors/handleValidationError'
-import handleZodError from '../../errors/handleZodError'
-import { IErrorMessages } from '../../interfaces/error'
-import { errorLogger } from '../../shared/logger'
+import config from '../../config';
+import ApiError from '../../errors/apiError';
+import handleValidationError from '../../errors/handleValidationError';
+import handleZodError from '../../errors/handleZodError';
+import { IErrorMessages } from '../../interfaces/error';
+import { errorLogger } from '../../shared/logger';
+import handleCastError from '../../errors/handleCastError';
 
 const globalMiddleware: ErrorRequestHandler = (
   error,
@@ -16,25 +17,30 @@ const globalMiddleware: ErrorRequestHandler = (
 ) => {
   config.env === 'development'
     ? console.log(` globalErrorHandler `, error)
-    : errorLogger.error(` globalErrorHandler `, error)
+    : errorLogger.error(` globalErrorHandler `, error);
 
-  let statusCode = 500
-  let message = 'something went wrong'
-  let errorMessages: IErrorMessages[] = []
+  let statusCode = 500;
+  let message = 'something went wrong';
+  let errorMessages: IErrorMessages[] = [];
 
   if (error?.name === 'ValidationError') {
-    const simplifiedError = handleValidationError(error)
-    statusCode = simplifiedError.statusCode
-    message = simplifiedError.message
-    errorMessages = simplifiedError.errorMessages
+    const simplifiedError = handleValidationError(error);
+    statusCode = simplifiedError.statusCode;
+    message = simplifiedError.message;
+    errorMessages = simplifiedError.errorMessages;
   } else if (error instanceof ZodError) {
-    const simplifiedError = handleZodError(error)
-    statusCode = simplifiedError.statusCode
-    message = simplifiedError.message
-    errorMessages = simplifiedError.errorMessages
+    const simplifiedError = handleZodError(error);
+    statusCode = simplifiedError.statusCode;
+    message = simplifiedError.message;
+    errorMessages = simplifiedError.errorMessages;
+  } else if (error.name === 'CastError') {
+    const simplifiedError = handleCastError(error);
+    (statusCode = simplifiedError.statusCode),
+      (message = simplifiedError.message),
+      (errorMessages = simplifiedError.errorMessages);
   } else if (error instanceof ApiError) {
-    statusCode = error?.statusCode
-    message = error.message
+    statusCode = error?.statusCode;
+    message = error.message;
     errorMessages = error?.message
       ? [
           {
@@ -42,9 +48,9 @@ const globalMiddleware: ErrorRequestHandler = (
             message: error?.message,
           },
         ]
-      : []
+      : [];
   } else if (error instanceof Error) {
-    message = error?.message
+    message = error?.message;
     errorMessages = error?.message
       ? [
           {
@@ -52,7 +58,7 @@ const globalMiddleware: ErrorRequestHandler = (
             message: error?.message,
           },
         ]
-      : []
+      : [];
   }
 
   res.status(statusCode).json({
@@ -60,8 +66,8 @@ const globalMiddleware: ErrorRequestHandler = (
     message,
     errorMessages,
     stack: config.env !== 'production' ? error?.stack : undefined,
-  })
-  next()
-}
+  });
+  next();
+};
 
-export default globalMiddleware
+export default globalMiddleware;

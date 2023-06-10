@@ -1,9 +1,9 @@
-import { z } from 'zod'
+import { z } from 'zod';
 import {
   academicSemesterCodes,
   academicSemesterTitles,
   academicSemesterMonths,
-} from './semester.constant'
+} from './semester.constant';
 
 const createAcademicSemesterZodSchema = z.object({
   body: z.object({
@@ -21,8 +21,8 @@ const createAcademicSemesterZodSchema = z.object({
       required_error: 'End month is needed',
     }),
   }),
-})
+});
 
 export const AcademicSemesterValidation = {
   createAcademicSemesterZodSchema,
-}
+};
