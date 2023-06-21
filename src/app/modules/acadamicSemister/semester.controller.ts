@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from 'express';
+import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
@@ -8,22 +8,19 @@ import { paginationFields } from '../../../constant/pagination';
 import { academicSemesterFilterableFields } from './semester.constant';
 import pick from '../../../shared/pick';
 
-const createSemester = catchAsync(
-  async (req: Request, res: Response, next: NextFunction) => {
-    const { ...academicSemesterData } = req.body;
-    const result = await AcademicSemesterService.createSemester(
-      academicSemesterData
-    );
+const createSemester = catchAsync(async (req: Request, res: Response) => {
+  const { ...academicSemesterData } = req.body;
+  const result = await AcademicSemesterService.createSemester(
+    academicSemesterData
+  );
 
-    sendResponse<IAcademicSemester>(res, {
-      statusCode: httpStatus.OK,
-      success: true,
-      message: 'Aademic semester created successfully!',
-      data: result,
-    });
-    next();
-  }
-);
+  sendResponse<IAcademicSemester>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Aademic semester created successfully!',
+    data: result,
+  });
+});
 
 const getAllSemester = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, academicSemesterFilterableFields);

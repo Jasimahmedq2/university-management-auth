@@ -6,16 +6,6 @@
     "auditLog": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\.a8790018b2ef8039324d06b8342975976fd4ddbd-audit.json",
     "files": [
         {
-            "date": 1685854382115,
-            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-10-04-06-error.log",
-            "hash": "460915536bdd13ec8ac3a7edf902853436eaf5363732284182ca3583720003ac"
-        },
-        {
-            "date": 1685858597989,
-            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-12-04-06-error.log",
-            "hash": "292a7ec3160a1a5ea89eead02aa25ffde29440cb0f70aaf87398a1e11513d1d7"
-        },
-        {
             "date": 1686153094039,
             "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-21-07-06-error.log",
             "hash": "af9593117e734d3bbf0b6a463e21367684b8d28af68b6b26c4217b383a1c46ce"
@@ -104,6 +94,61 @@
             "date": 1686496289959,
             "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-21-11-06-error.log",
             "hash": "743b052c84e017ee8672759b0df195e2d78a037cdb95b3ad710a2be420e6312d"
+        },
+        {
+            "date": 1686508215844,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-00-12-06-error.log",
+            "hash": "c550809d8bcfb733ca8f4eeb7a24851c6963729ff4b9da544c9987747f6bf328"
+        },
+        {
+            "date": 1686510760791,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-01-12-06-error.log",
+            "hash": "7053c65a51928031125dc4384cbfe82b81642fbe58d38bd0e8f6039ae63116a6"
+        },
+        {
+            "date": 1686546758369,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-11-12-06-error.log",
+            "hash": "788f46a077dce3c846cf69256c555b84001c09e14dfee8774a57b5a566821d52"
+        },
+        {
+            "date": 1686731893045,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-14-14-06-error.log",
+            "hash": "5da4a6c498e0d567e51effb71ecca355aeacbb69698910e6114b832e2501d7aa"
+        },
+        {
+            "date": 1686733501798,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-15-14-06-error.log",
+            "hash": "01f0359d99467cb97a1b4db6a90d4c64327513f4696d1bb511837590d4f1be01"
+        },
+        {
+            "date": 1686819831550,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-15-15-06-error.log",
+            "hash": "4e34b5f0010f89e6c639c0ceef41a12b23e9b242abe26d9830fe02b53668a11e"
+        },
+        {
+            "date": 1687333075303,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-13-21-06-error.log",
+            "hash": "6291a59a6433947f633fe3b1150a3a12b8e67015e1a4a1631eaf832f6d2ebb70"
+        },
+        {
+            "date": 1687334401761,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-14-21-06-error.log",
+            "hash": "51a3c87e405b7e913bc2e0d09851d7c36acde1e16a38b49880ccfcede97c3e8d"
+        },
+        {
+            "date": 1687338014176,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-15-21-06-error.log",
+            "hash": "c01a9814d6c46378baedb49537a50d2ea3116a0397c868a77a12222616bf03fd"
+        },
+        {
+            "date": 1687346392846,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-17-21-06-error.log",
+            "hash": "f4a7d8968be143ec71c7848eb8ec5c735ea22713f5063fde0c4a3c66685d5b90"
+        },
+        {
+            "date": 1687350600241,
+            "name": "C:\\level-two-project\\university-management-backend\\logs\\winston\\errors\\um-2023-18-21-06-error.log",
+            "hash": "3f4f2416e841e717f1007a75d87866e7e6616576d5f6cadcce157071144781b3"
         }
     ],
     "hashType": "sha256"
