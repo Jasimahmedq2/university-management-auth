@@ -1,20 +1,45 @@
-import mongoose from 'mongoose'
-import config from './config/index'
-import app from './app'
-import { errorLogger, logger } from './shared/logger'
+import { Server } from 'http';
+import mongoose from 'mongoose';
+import config from './config/index';
+import app from './app';
+import { errorLogger, logger } from './shared/logger';
 
-const port: number = 5000 || config.port
+process.on('uncaughtException', error => {
+  errorLogger.error(error);
+  process.exit(1);
+});
+
+let server: Server;
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(config.db_connect as string)
-    logger.info('db connected')
-    app.listen(port, () => {
-      console.log('successfully connected')
-    })
-  } catch (error) {
-    errorLogger.error('db disconnected:', error)
-  }
-}
+    await mongoose.connect(config.db_connect as string);
+    logger.info(`🛢   Database is connected successfully`);
 
-connectDB()
+    server = app.listen(config.port, () => {
+      logger.info(`Application  listening on port ${config.port}`);
+    });
+  } catch (err) {
+    errorLogger.error('Failed to connect database', err);
+  }
+
+  process.on('unhandledRejection', error => {
+    if (server) {
+      server.close(() => {
+        errorLogger.error(error);
+        process.exit(1);
+      });
+    } else {
+      process.exit(1);
+    }
+  });
+};
+
+connectDB();
+
+process.on('SIGTERM', () => {
+  logger.info('SIGTERM is received');
+  if (server) {
+    server.close();
+  }
+});
